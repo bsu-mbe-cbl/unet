@@ -1,0 +1,92 @@
+name: unet
+channels:
+  - conda-forge
+  - defaults
+  # - pytorch
+  # - fastai
+dependencies:
+  - python>=3.7
+  - pip
+  #
+  # BASICS
+  - numpy
+  # - scipy
+  # - pandas
+  # - xlrd
+  # - tqdm
+  # - click
+  #
+  # VISUALIZATION
+  - matplotlib
+  - seaborn
+  # - plotly
+  # - webcolors
+  # - pillow
+  # - imageio
+  # - imageio-ffmpeg
+  # - pyvista
+  # - panel
+  # - vtk
+  # - itkwidgets
+  # - pydicom
+  # - paraview
+  # - webcolors
+  # - altair
+  # - yellowbrick
+  #
+  # ML, STATS & DEEP LEARNING
+  # - scikit-learn
+  # - scikit-image
+  # - statsmodels
+  # - cudatoolkit=10.1
+  # - cudnn=7.6
+  - cudatoolkit=11.0
+  - cudnn=8.0
+  # - opencv
+  #
+  # OTHER TOOLS
+  - dvc
+  # - dask
+  - optuna
+  # - ffmpeg
+  # - graphicsmagick
+  - pyscaffold
+  - pip:
+    - -e .  # install git checkout of unet in editable mode
+    # add here only pip-packages that are not available in conda/conda-forge!
+    # - tensorboard==2.3.0
+    # - tensorflow==2.3.1
+    - tensorflow==2.4.1
+    - tensorboard
+    - tensorflow_addons
+    # - tensorflow-datasets
+    # - tensorflow-estimator==2.3.0
+    # - tensorflow-metadata
+    # - mritopng
+    - pyscaffoldext-markdown
+    - pyscaffoldext-dsproject
+    - jupyter-book
+    # - meshio[all]
+#
+# DEVELOPMENT ONLY PACKAGES (could also be kept in a separate environment file)
+  - jupyterlab
+  - ipywidgets
+  - ipython
+  - ipykernel
+  - rope
+  - pycodestyle
+  - pydocstyle
+  - pylint
+  - xeus-python
+  - pytest
+  - pytest-cov
+  - tox
+  - nbdime  # diffing and merging of jupyter notebooks
+  - nbstripout  # removes output from jupyter notebooks
+  - sphinx
+  - recommonmark
+  - pre-commit
+#
+# PINS FOR BROKEN DEPENDENCIES
+  # - h5py<3.0
+  # - virtualenv<=20.0.8
