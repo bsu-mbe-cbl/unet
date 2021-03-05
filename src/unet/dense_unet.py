@@ -215,8 +215,8 @@ class ConcatLayer(layers.Layer):
 
             down_layer_cropped = down_layer[
                 :,
-                height_diff:(x1_shape[1] - height_diff),
-                width_diff:(x1_shape[2] - width_diff),
+                height_diff: (x1_shape[1] - height_diff),
+                width_diff: (x1_shape[2] - width_diff),
                 :,
             ]
             x = tf.concat([down_layer_cropped, x], axis=-1)
